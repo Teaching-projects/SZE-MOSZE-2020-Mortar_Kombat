@@ -1,12 +1,14 @@
 #include "Character.h"
 #include <iostream>
 
-int main(const int argc, const char** argv) {
-
-	if (argc == 7)
+int main (const int argc, const char* argv[])
+{
+	if (argc == 3)
 	{
-		Character player1 = Character(argv[1], std::stoul(argv[2]), std::stoul(argv[3]));
-		Character player2 = Character(argv[4], std::stoul(argv[5]), std::stoul(argv[6]));
+		std::vector<std::string> characterAttributes = Character::parseUnit(argv[1]);
+		Character player1 = Character(characterAttributes.at(0), stoul(characterAttributes.at(1)), stoul(characterAttributes.at(2)));
+		characterAttributes = Character::parseUnit(argv[2]);
+		Character player2 = Character(characterAttributes.at(0), stoul(characterAttributes.at(1)), stoul(characterAttributes.at(2)));
 
 		bool firstsTurn = true;
 		while (player1.getHP() > 0 && player2.getHP() > 0)
@@ -39,10 +41,10 @@ int main(const int argc, const char** argv) {
 			std::cout << player1.getName() << " wins. Remaining HP: " << player1.getHP() << std::endl;
 		}
 	}
-    else
-    {
-        std::cout << "Incorrect number of arguments!" << std::endl;
-    }
-
+	else
+	{
+		//later to be adjusted !!!!!!!!!!!!!
+		throw std::runtime_error("Incorrect number of arguments!");
+	}
     return 0;
 }
