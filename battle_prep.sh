@@ -1,7 +1,6 @@
 #!/bin/bash
 
-xIFS=$IFS
-IFS=$'\n'
+IFS = $'\n'
 
 rm output.csv
 
