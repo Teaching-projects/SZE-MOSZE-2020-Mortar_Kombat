@@ -1,0 +1,14 @@
+name: Pipeline building
+
+on: push
+
+jobs:
+  preparation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: g++ -std=c++17 *.cpp
+      - name: Calling program from shell
+        run: ./battle_prep
+      - name: Checking differences, if output is expected
+        run: diff output.csv expected_output.csv
