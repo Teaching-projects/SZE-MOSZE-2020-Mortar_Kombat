@@ -1,6 +1,6 @@
-./a.out units/Unit1.json units/Unit2.json
-./a.out units/Unit1.json units/Unit3.json
-./a.out units/Unit2.json units/Unit1.json
-./a.out units/Unit2.json units/Unit3.json
-./a.out units/Unit3.json units/Unit2.json
-./a.out units/Unit3.json units/Unit1.json
+Kakarott wins. Remaining HP: 4455
+Kakarott wins. Remaining HP: 4455
+Mottaka wins. Remaining HP: 3772
+Mottaka wins. Remaining HP: 3772
+Rottaka wins. Remaining HP: 2470
+Rottaka wins. Remaining HP: 2470
