@@ -11,6 +11,8 @@ jobs:
         run: g++ -std=c++17 -o a.out *.cpp
       - name: Regaining right
         run: chmod a+x ./battle_prep.sh
+      - name: Fixing line endings failure
+        run: sed -i -e 's/\r$//' ./battle_prep.sh
       - name: Calling program from shell
         run: ./battle_prep.sh
       - name: Checking differences, if output is expected
