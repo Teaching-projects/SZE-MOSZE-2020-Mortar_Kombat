@@ -6,7 +6,8 @@
 !*.json
 !*.py
 !*.sh
+!*.yml
 
 !.gitignore
-!.github
-!units
+!.github/
+!units/
