@@ -8,10 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-      - run: g++ -std=c++17 *.cpp
-      - name: Regaining rights
-      - run: chmod a+x ./battle_prep.sh
+        run: g++ -std=c++17 *.cpp
+      - name: Regaining right
+        run: chmod a+x ./battle_prep.sh
       - name: Calling program from shell
-      - run: ./battle_prep.sh
+        run: ./battle_prep.sh
       - name: Checking differences, if output is expected
-      - run: diff output.csv expected_output.csv
+        run: diff output.csv expected_output.csv
