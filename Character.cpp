@@ -5,29 +5,29 @@ Character::Character(const std::string characterName, const unsigned int healthP
 	HP = healthPoints;
 }
 
-std::vector<std::string> Character::parseUnit(std::string fileName)
+Character Character::parseUnit(std::string fileName)
 {
 	std::ifstream sourceFile(fileName);
 	if (sourceFile.good())
 	{
-        fileName.resize(fileName.length() - 5);
+		fileName.resize(fileName.length() - 5);
 
-		std::string command = "\
-		python json2txt.py \
-		";
+			std::string command = "\
+			python json2txt.py \
+			";
 
-		command.append(fileName);
-		system(command.c_str());
-        std::ifstream outputFile(fileName + ".txt");
-        std::string line;
-        std::vector<std::string> characterAttributes;
-        while (std::getline(outputFile, line))
-        {
-            characterAttributes.push_back(line);
-        }
+			command.append(fileName);
+			system(command.c_str());
+		std::ifstream outputFile(fileName + ".txt");
+		std::string line;
+		std::vector<std::string> characterAttributes;
+		while (std::getline(outputFile, line))
+		{
+		    characterAttributes.push_back(line);
+		}
 
-        std::remove((fileName + ".txt").c_str());
-        return characterAttributes;
+		std::remove((fileName + ".txt").c_str());
+		return Character(characterAttributes.at(0), stoul(characterAttributes.at(1)), stoul(characterAttributes.at(2)));
 	}
 	else
 	{
