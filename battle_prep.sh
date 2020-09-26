@@ -2,7 +2,7 @@
 
 xIFS=$IFS
 IFS=$'\n'
-f_tocheck='output.csv'
+f_tocheck='output.txt'
 
 if [ -f $f_tocheck]; then
     rm $f_tocheck
