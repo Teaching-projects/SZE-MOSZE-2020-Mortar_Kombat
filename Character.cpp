@@ -12,12 +12,12 @@ Character Character::parseUnit(std::string fileName)
 	{
 		fileName.resize(fileName.length() - 5);
 
-			std::string command = "\
-			python json2txt.py \
-			";
+		/*std::string command = "\
+		python json2txt.py \
+		";
 
-			command.append(fileName);
-			system(command.c_str());
+		command.append(fileName);
+		system(command.c_str());*/
 		std::ifstream outputFile(fileName + ".txt");
 		std::string line;
 		std::vector<std::string> characterAttributes;
@@ -26,7 +26,7 @@ Character Character::parseUnit(std::string fileName)
 		    characterAttributes.push_back(line);
 		}
 
-		std::remove((fileName + ".txt").c_str());
+		//std::remove((fileName + ".txt").c_str());
 		return Character(characterAttributes.at(0), stoul(characterAttributes.at(1)), stoul(characterAttributes.at(2)));
 	}
 	else
