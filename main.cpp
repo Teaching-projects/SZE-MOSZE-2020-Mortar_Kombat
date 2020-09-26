@@ -7,6 +7,21 @@ int main (const int argc, const char* argv[])
 	{
 		Character player1 = Character::parseUnit(argv[1]);
 		Character player2 = Character::parseUnit(argv[2]);
+		
+		bool firstsTurn = true;
+		while (player1.getHP() > 0 && player2.getHP() > 0)
+		{
+			if (firstsTurn)
+			{
+				player2.gotHit(player1.getDMG());
+			}
+			else
+			{
+				player1.gotHit(player2.getDMG());
+			}
+			firstsTurn = !firstsTurn;
+		}
+
 
 		if (player1.getHP() == 0)
 		{
