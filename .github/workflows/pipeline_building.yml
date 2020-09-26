@@ -16,4 +16,4 @@ jobs:
       - name: Calling program from shell
         run: ./battle_prep.sh
       - name: Checking differences, if output is expected
-        run: diff output.csv expected_output.csv
+        run: diff output.txt expected_output.txt
