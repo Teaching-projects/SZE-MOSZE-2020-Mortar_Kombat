@@ -7,8 +7,8 @@
 #include <iterator>
 #include <list>
 
-#include "JSONParser.h" //later to be renamed JSON.h (REFACTOR!!!)
-#include "Player.h" //later to be renamed Hero.h (REFACTOR!!!)
+#include "JSON.h"
+#include "Hero.h"
 #include "Monster.h"
 
 const std::map<int, std::string> error_messages = {

@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "Hero.h"
 
 Hero::Hero(const std::string characterName, float healthPoints, float damagePoints, float attackSpeed)
 	: Character(characterName, healthPoints, damagePoints, attackSpeed)

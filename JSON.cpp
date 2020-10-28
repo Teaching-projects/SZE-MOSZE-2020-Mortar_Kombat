@@ -1,4 +1,4 @@
-#include "JSONParser.h"
+#include "JSON.h"
 
 std::string::size_type JSON::findNext(std::string& s, char target, std::unordered_set<char> set, std::string mode)
 {
