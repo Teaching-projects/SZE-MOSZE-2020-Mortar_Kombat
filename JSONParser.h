@@ -1,5 +1,5 @@
-#ifndef JSONPARSER_H
-#define JSONPARSER_H
+#ifndef JSON_H
+#define JSON_H
 
 #include "Character.h"
 #include <map>
@@ -9,18 +9,21 @@
 #include <streambuf>
 #include <unordered_set>
 
-namespace JSONParser
+namespace JSON
 {
-    //INSTRUCTIONS: Specify mode = "inclusive" for an allowed character set. Exclusive is default.
-    std::string::size_type findNext(std::string &s, char target, std::unordered_set<char> set = {}, std::string mode = "");
-    void checkString(std::string& s);
-    std::any string2any(std::string& s);
-    std::map<std::string, std::any> parseString(std::string& s);
+	//INSTRUCTIONS: Specify mode = "inclusive" for an allowed character set. Exclusive is default.
+	std::string::size_type findNext(std::string& s, char target, std::unordered_set<char> set = {}, std::string mode = "");
+	void checkString(std::string& s);
+	std::any string2any(std::string& s);
+	std::map<std::string, std::any> parseString(std::string& s);
 
-    //INSTRUCTIONS: Provide parseble string (default) or text file path (isFile must be set true)!
-    std::map<std::string, std::any> parse(std::string inputString = "", bool isFile = false);
-    //INSTRUCTIONS: Provide parseble stream!
-    std::map<std::string, std::any> parse(std::istream &stream);
+	//INSTRUCTIONS: Provide parseble string (default) or text file path (isFile must be set true)!
+	std::map<std::string, std::any> parse(std::string inputString = "", bool isFile = false);
+	//INSTRUCTIONS: Provide parseble stream!
+	std::map<std::string, std::any> parse(std::istream& stream);
+	static std::map<std::string, std::string> parseFromFile(std::string fileName);
+
+	class ParseException : public std::exception {};
 };
 
 #endif

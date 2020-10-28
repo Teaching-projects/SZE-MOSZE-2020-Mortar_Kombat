@@ -3,18 +3,21 @@
 
 #include "Character.h"
 #include <math.h>
-#include <any>
 
-class Player : public Character
+class Hero : public Character
 {
 private:
 	float XP;
-    Player(const std::string characterName, float healthPoints, float damagePoints, float attackSpeed);
+	Hero(const std::string characterName, float healthPoints, float damagePoints, float attackSpeed);
 	void levelup(float levelupXP);
 	void gainXP(float damagePoints);
 public:
-    static Player parseUnit(std::string fileName);
+	static Hero parse(std::string fileName);
 	void doHit(Character& victim);
+	/**
+	 @return the Hero's current level.
+	 */
+	const unsigned int getLevel() const;
 };
 
 #endif
