@@ -10,7 +10,7 @@ jobs:
       - name: Install Cppcheck, Valgrind and Google Test to prevent inclusion error
         run: sudo apt install cppcheck valgrind
       - name: Build phase
-        run: g++ -std=c++17 -o a.out *.cpp
+        run: g++ -std=c++17 -o a.out *.cpp -lstdc++fs
       - name: Gaining rights
         run: chmod a+x ./test.sh ./memtest.sh ./code_analysis.sh
       - name: Calling code analysis
